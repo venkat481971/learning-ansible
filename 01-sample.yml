@@ -1,9 +1,12 @@
-- hosts: all
+- name: Demo of play1
+  hosts: all
   tasks:
-    -name: print Hellow
-    ansible.builtin.debug:
-       msg: Hellow
-- hosts: all
+    - name: print Hellow
+      ansible.builtin.debug:
+        msg: Hellow
+- name: Demo of play2
+  hosts: all
   tasks:
     - name: print bye
       ansible.builtin.debug:
+        msg: bye
