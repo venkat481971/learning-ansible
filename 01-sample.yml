@@ -1,9 +1,9 @@
 - hosts: all
   tasks:
     -name: print Hellow
-     ansible.builtin.debug:
+    ansible.builtin.debug:
        msg: Hellow
 - hosts: all
   tasks:
     - name: print bye
-        ansible.builtin.debug:
+      ansible.builtin.debug:
