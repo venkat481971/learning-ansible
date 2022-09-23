@@ -5,3 +5,7 @@
 - name: print uptime output
   ansible.builtin.debug:
     msg: "{{out.stdout}}"
+
+- name: print URL
+  ansible.builtin.debug:
+    msg: URL = {{ URL }}
