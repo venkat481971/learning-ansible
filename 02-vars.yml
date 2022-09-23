@@ -32,6 +32,28 @@
       ansible.builtin.debug:
         msg: URL == {{ URL }}
 
+- name: print Fact
+  hosts: all
+  tasks:
+    - ansible.builtin.debug:
+        msg: Hostname = {{ ansible_hostname }}
+
+- name: Register a variable example
+  hosts: all
+  tasks:
+    - name: Get uptime
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: print out register
+      ansible.builtin.debug:
+        msg: "{{out.stdout}}"
+    - name: Declare a fact
+      ansible.builtin.set_fact:
+        SHELL_STDOUT: "{{out.stdout}}"
+    - name: print shell output from set_Fact variable
+      ansible.builtin.debug:
+        msg: OUTPUT = {{ SHELL_STDOUT }}
 
 
 
