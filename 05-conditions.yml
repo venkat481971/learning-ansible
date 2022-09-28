@@ -10,6 +10,6 @@
 
     - name: Number Check
       debug:
-        msg: "{{a}}" is gt 1"
+        msg: "{{a}} is gt 1"
       when: a > 1
 
