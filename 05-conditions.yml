@@ -1,8 +1,15 @@
 - name: Demo on conditions
   hosts: localhost
+  vars:
+    a: 5
   tasks:
     - name: String Check
       debug:
         msg: Hello CentOS
       when: ansible_distribution == 'CentOS'
+
+    - name: Number Check
+      debug:
+        msg: "{{a}}" is gt 1"
+      when: a > 1
 
