@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
     PARAMETER: "{{ lookup('aws_ssm', 'roboshop.test', region='us-east-1' ) }}"
-    SECRET: "{{ lookup('amazon.aws.aws_secret', 'roboshop/all-secrets', region='us-east-1')}}"
+    SECRET: "{{ lookup('amazon.aws.aws_secret', 'roboshop/all-secrets', region='us-east-1') | items2dict}}"
   tasks:
     - name: Pull secret
       debug: msg="{{ lookup(SECRET,"ROBOSHOP_MYSQL_PASSWORD") }}"
