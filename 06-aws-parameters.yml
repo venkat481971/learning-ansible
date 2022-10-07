@@ -5,8 +5,8 @@
     SECRET: "{{ lookup('amazon.aws.aws_secret', 'roboshop/all-secrets', region='us-east-1')  }}"
   tasks:
     - name: Pull secret
-      debug: msg="{{ PARAMETER }}"
+      debug: msg= "{{ PARAMETER }}"
     - name: Pull Parameter
-      debug: msg="{{ SECRET.RABBITMQ_PASSWORD }}"
+      debug: msg= "{{ SECRET.RABBITMQ_PASSWORD }}"
 
 
