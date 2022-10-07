@@ -7,6 +7,6 @@
     - name: Pull secret
       debug: msg="{{ PARAMETER }}"
     - name: Pull Parameter
-      debug: msg="{{ SECRET.ROBOSHOP_MYSQL_PASSWORD }}"
+      debug: msg="{{ SECRET.RABBITMQ_PASSWORD }}"
 
 
